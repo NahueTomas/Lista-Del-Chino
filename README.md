@@ -1,2 +1,2 @@
-# Lista-Del-Super
+# Lista del super
 Una lista de compras
