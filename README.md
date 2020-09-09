@@ -1,2 +1,2 @@
-# Lista-del-chino
+# Lista-Del-Super
 Una lista de compras
