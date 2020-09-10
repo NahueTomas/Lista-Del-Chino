@@ -38,7 +38,7 @@ div.first-column .inputs-cointaner input{
     margin-top: 10px;
     border-radius: 3px;
     color: #1d3557;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 div.second-column{
@@ -111,6 +111,7 @@ ul li{
     display: flex;
     width: 55px;
     justify-content: space-between;
+    align-items: center;
 }
 
 [type="checkbox"]{
