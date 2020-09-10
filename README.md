@@ -2,4 +2,4 @@
 Una lista de compras
 
 
-<img src="https://i.imgur.com/MNsGCuu.png?1">
+<img src="img/screenshot.png">
