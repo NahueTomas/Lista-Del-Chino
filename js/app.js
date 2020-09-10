@@ -1,48 +1,78 @@
 const form  = document.querySelector('form')
 const list = document.querySelector('.list')
 
-document.addEventListener('DOMContentLoaded', main)
+let arrayList = []
+
+main()
 
 function main(){
+    document.addEventListener('DOMContentLoaded', readLS)
     form.addEventListener('submit', saveText)
+    list.addEventListener('click', deleteItem)
 }
 
 function saveText(e){
     e.preventDefault()
-    if (e.target.children[0].value.length > 1 ){
-        list.appendChild(createList(e.target.children[0].value))
-        list.addEventListener('click', deleteItem)
-
-        e.target.children[0].value = ''
+    text = e.target.children[0].value
+    if (text.length > 1 ){
+        textObj = {
+            id: Date.now(),
+            text
+        }
+        arrayList = [...arrayList, textObj]
+        form.reset()
+        createItem(arrayList)
     }
 }
 
-function createList(value){
-    const article = document.createElement('li')
-    const text = document.createElement('p')
-    const btnT = document.createElement('a')
-    const btnC = document.createElement('input')
-    const cont = document.createElement('div')
+function createItem(value){
+    clearHTML()
+    value.forEach(element => {
+        const item = document.createElement('li')
 
-    btnT.innerHTML = `<img class="btn-trash" width="25" src="img/trash-icon.png"></img>`
+        const btnC = document.createElement('input')
+        btnC.setAttribute('type', 'checkbox')
 
-    btnC.setAttribute('type', 'checkbox')
-    btnC.classList.add('btn-complete')
+        const btnD = document.createElement('img')
+        btnD.setAttribute('src', 'img/trash-icon.png')
+        btnD.setAttribute('width', '25')
 
-    cont.classList.add('container-items')
-    cont.appendChild(btnC)
-    cont.appendChild(btnT)
+        const cont = document.createElement('div')
+        cont.classList.add('container-items')
+        cont.appendChild(btnC)
+        cont.appendChild(btnD)
 
-    text.textContent = value
+        item.textContent = element.text
 
-    article.appendChild(text)
-    article.appendChild(cont)
-    
-    return article
+        item.appendChild(cont)
+        item.setAttribute('id', `${element.id}`)
+
+        list.appendChild(item)
+    });
+
+    syncLS()
+
+}
+
+function clearHTML(){
+    while(list.firstChild){
+        list.removeChild(list.firstChild)
+    }
 }
 
 function deleteItem(e){
-    if(e.target.classList.contains('btn-trash')){
-        list.removeChild(e.target.parentElement.parentElement.parentElement)
+    if (e.target.tagName === 'IMG'){
+        const id = Number(e.target.parentElement.parentElement.id)
+        arrayList = arrayList.filter(element => element.id !== id)
+        createItem(arrayList)
     }
+}
+
+function syncLS(){
+    localStorage.setItem('items', JSON.stringify(arrayList))
+}
+
+function readLS(){
+    arrayList = (JSON.parse(localStorage.getItem('items')) || [])
+    createItem(arrayList)
 }

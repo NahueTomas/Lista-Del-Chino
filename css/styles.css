@@ -109,10 +109,8 @@ ul li{
 
 .container-items{
     display: flex;
-    width: 55px;
+    width: 60px;
+    margin: 0px 10px;
     justify-content: space-between;
     align-items: center;
-}
-
-[type="checkbox"]{
 }
