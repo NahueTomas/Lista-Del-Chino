@@ -24,7 +24,7 @@ function createList(value){
     const btnC = document.createElement('input')
     const cont = document.createElement('div')
 
-    btnT.innerHTML = `<img class="btn-trash" width="30" src="img/trash-icon.png"></img>`
+    btnT.innerHTML = `<img class="btn-trash" width="25" src="img/trash-icon.png"></img>`
 
     btnC.setAttribute('type', 'checkbox')
     btnC.classList.add('btn-complete')

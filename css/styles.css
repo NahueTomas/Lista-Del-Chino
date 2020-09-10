@@ -38,6 +38,7 @@ div.first-column .inputs-cointaner input{
     margin-top: 10px;
     border-radius: 3px;
     color: #1d3557;
+    font-size: 20px;
 }
 
 div.second-column{
@@ -95,17 +96,22 @@ ul {
 
 ul li{
     list-style: none;
-    margin-top: 25px;
+    margin-top: 10px;
     border-bottom: 1px solid #457B9D;
     display: flex;
     overflow: auto;
     justify-content: space-between;
+    background: rgba(255, 255, 255, 0.294);
+    padding: 5px;
+    border-radius: 3px;
 }
 
-.btn-trash{
-    margin: 0px 10px;
-}
 
 .container-items{
-    display: block;
+    display: flex;
+    width: 55px;
+    justify-content: space-between;
+}
+
+[type="checkbox"]{
 }
