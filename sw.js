@@ -13,7 +13,8 @@ const archivos = [
     '/img/icons/icon-196.png',
     '/img/icons/icon-256.png',
     '/img/icons/icon-512.png',
-    '/error.html'
+    '/error.html',
+    '/manifest.json'
 ]
 
 self.addEventListener('install', e=>{
