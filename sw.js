@@ -1,4 +1,4 @@
-const nombreCache = 'lista-v21'
+const nombreCache = 'lista-v25'
 const archivos = [
     '/',
     '/index.html',
@@ -7,7 +7,7 @@ const archivos = [
     '/css/styles.css',
     '/img/trash-icon.png',
     '/img/icons/icon-512.png',
-    '/error.html'
+    '/error.html',
     '/manifest.json'
 ]
 
