@@ -1,4 +1,4 @@
-const nombreCache = 'lista-v12'
+const nombreCache = 'lista-v13'
 const archivos = [
     '/',
     '/index.html',
@@ -32,7 +32,7 @@ self.addEventListener('activate', e=>{
                     if (cacheWhiteList.indexOf(cacheName) === -1){
                         return caches.delete(cacheName)
                     }
-                }
+                })
             }
     )
 })
