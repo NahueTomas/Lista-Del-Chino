@@ -1,4 +1,4 @@
-const nombreCache = 'lista-v25'
+const nombreCache = 'lista-v26'
 const archivos = [
     '/',
     '/index.html',
@@ -6,9 +6,15 @@ const archivos = [
     '/js/lista.js',
     '/css/styles.css',
     '/img/trash-icon.png',
-    '/img/icons/icon-512.png',
     '/error.html',
-    '/manifest.json'
+    '/manifest.json',
+    '/img/icons/icon-512.png',
+    '/img/icons/icon-256.png',
+    '/img/icons/icon-196.png',
+    '/img/icons/icon-152.png',
+    '/img/icons/icon-128.png',
+    '/img/icons/icon-120.png',
+    '/img/icons/icon-72.png'
 ]
 
 self.addEventListener('install', e=>{
