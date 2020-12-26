@@ -1,4 +1,4 @@
-const nombreCache = 'lista-v17'
+const nombreCache = 'lista-v20'
 const archivos = [
     '/',
     '/index.html',
