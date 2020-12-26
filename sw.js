@@ -24,14 +24,16 @@ self.addEventListener('install', e=>{
 })
 
 self.addEventListener('activate', e=>{
+    const cacheWhiteList =[nombreCache]
     e.waitUntil(
         caches.keys()
-            .then(keys=> {
-                return Promise.all(
-                    keys.filter(key => key !== nombreCache)
-                        .map(key=> caches.delete(key))
-                )
-            })
+            .then(cachesNames => {
+                cachesNames.map(cacheName=>{
+                    if (cacheWhiteList.indexOf(cacheName) === -1){
+                        return caches.delete(cacheName)
+                    }
+                }
+            }
     )
 })
 
